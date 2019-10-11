@@ -11,8 +11,6 @@
 	</head>
 	<body>
 		<div id="container"></div>
-		<div id="blocker"></div>
-		
 		<footer>
 			<script src='./js/build/three.min.js'></script>
 			<script src='./js/main.js' type="module"></script>
