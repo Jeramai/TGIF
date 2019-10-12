@@ -14,6 +14,7 @@
 		<footer>
 			<script src='./js/build/three.min.js'></script>
 			<script src='./js/main.js' type="module"></script>
+			<script src='./js/background.js' type="module"></script>
 		</footer>
 	</body>
 </html>
