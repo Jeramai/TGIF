@@ -5,20 +5,13 @@ var camera, scene, renderer;
 var controls;
 
 //Opzetten van een vlak van de kubus.
-//Het lijkt mij het verstandigst hier straks een iframe van te maken, zodat we losse pagina's kunnen maken en importeren.
-// Maar hier moeten we samen nog maar even naar kijken.
 var Element = function ( content, x, y, z, rx, ry) {
-	var div = document.createElement( 'div' );
+	var div = document.createElement( 'iframe' );
 	div.style.width = '420px';
 	div.style.height = '420px';
+	div.style.border = 'none';
 	div.style.backgroundColor = 'white';
-	div.style.textAlign = 'center';
-	div.innerHTML = content;
-
-	//Dit is puur om de placeholder fancy in het midden te laten staan. Mag later weg :)
-	div.style.display = 'flex';
-	div.style.flexDirection = 'column';
-	div.style.justifyContent = 'center';
+	div.src = content;
 
 	//Het letterlijke aanmaken van de kubus
 	var object = new CSS3DObject( div );
@@ -44,12 +37,12 @@ function init() {
 
 	//Hier worden de kanten van de kubus aangemaakt.
 	kubus = new THREE.Group();
-	kubus.add( new Element( 'Front', 0, 0, 210, 0, 0 ) ); //Front
-	kubus.add( new Element( 'Right', 210, 0, 0, 0, Math.PI / 2 ) ); 		//Right
-	kubus.add( new Element( 'Back', 0, 0, - 210, 0, Math.PI ) ); 			//Back
-	kubus.add( new Element( 'Left', - 210, 0, 0, 0, -Math.PI / 2 ) ); //Left
-	kubus.add( new Element( 'Top', 0, 210, 0, Math.PI/2, Math.PI ) ); //Top
-	kubus.add( new Element( 'Bottom', 0, -210, 0, Math.PI / 2, 0) ); //Bottom
+	kubus.add( new Element( './sides/front.html', 0, 0, 210, 0, 0 ) ); //Front
+	kubus.add( new Element( './sides/right.html', 210, 0, 0, 0, Math.PI / 2 ) ); 		//Right
+	kubus.add( new Element( './sides/back.html', 0, 0, - 210, 0, Math.PI ) ); 			//Back
+	kubus.add( new Element( './sides/left.html', - 210, 0, 0, 0, -Math.PI / 2 ) ); //Left
+	kubus.add( new Element( './sides/top.html', 0, 210, 0, Math.PI/2, Math.PI ) ); //Top
+	kubus.add( new Element( './sides/bottom.html', 0, -210, 0, Math.PI / 2, 0) ); //Bottom
 	scene.add( kubus );
 
 	//De controller zodat je de kubus kan draaien.
