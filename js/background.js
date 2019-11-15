@@ -15,6 +15,7 @@ function setup(){
   canvas.style.cssText = 'position:absolute;z-index:-1;'
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
+  canvas.style.transform = 'scale(1.1)'
   document.getElementById('container').prepend(canvas)
 
   //Zet de achtergrond
