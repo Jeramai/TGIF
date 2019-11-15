@@ -1,5 +1,6 @@
 body {
   background: #333F47;
+  overflow: hidden;
 }
 #context {
   width: 400px;
