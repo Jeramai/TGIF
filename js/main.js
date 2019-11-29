@@ -39,7 +39,6 @@ var Element = function ( id, content, x, y, z, rx, ry) {
 		}
 	}, true )
 
-
 	//Het letterlijke aanmaken van de kubus
 	var object = new CSS3DObject( div )
 	object.position.set( x, y, z )
@@ -62,8 +61,9 @@ animate()
 
 function init() {
 	var container = document.getElementById( 'container' )
-	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 5000 )
-	camera.position.set( 500, 350, 750 )
+
+	cameraAnimation()
+
 	scene = new THREE.Scene()
 	renderer = new CSS3DRenderer()
 	renderer.setSize( window.innerWidth, window.innerHeight )
@@ -89,6 +89,21 @@ function init() {
 
 }
 
+function cameraAnimation(){
+	var camUpdate = 500000
+	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 5000 )
+
+	var camInterval = setInterval(function(){
+		camera.position.set( 0, 0, camUpdate )
+		camUpdate -= ( camUpdate * 0.065 )
+		if(camUpdate <= 1500){
+			clearInterval(camInterval);
+		}
+	}, 10)
+
+	return camera
+}
+
 //De functie die de schermaanpassing uitvoerd
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight
@@ -101,7 +116,7 @@ function animate() {
 	requestAnimationFrame( animate )
 
 	if(!animateFlow){
-		return false
+    return false
 	}
 
 	kubus.rotation.y += 0.0025 //Laat de kubus draaien
