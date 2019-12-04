@@ -7,17 +7,80 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body onclick="clickBody()">
     <style>
-      #content {
+      @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+      *{
+        font-family: 'Bebas Neue', cursive;
+      }
+
+      html,
+      body {
+        background-color: #f2f2f2;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .label {
+        font-size: 18px;
+        font-weight: 400;
+        color: #888;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #888;
+        text-align: center;
+        margin-top: 90px
+      }
+
+      .wrap {
         display: flex;
-        justify-content: center; /* align horizontal */
-        align-items: center; /* align vertical */
-        height:400px;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .box {
+        text-align: center;
+      }
+
+      p {
+        font-size: 14px;
+        color: #888;
+        text-align: center;
       }
     </style>
-    <div id="content">
-      LEFT
+    <h1>Lottie</h1>
+    <div class="wrap">
+      <div class="box">
+        <div id="container"></div>
+        <div class="label"><u>What is Lottie?</u></div>
+      </div>
     </div>
+    <script src="https://www.michalhotovec.com/extra/loader/bodymovin.js" ></script>
+    <script>
+
+function clickBody(){
+  alert('hi')
+}
+
+var count = 0;
+    var container = document.getElementById('container');
+    var animData = {
+        container: container,
+        renderer: 'svg',
+        loop: true,
+        prerender: false,
+        autoplay: true,
+        autoloadSegments: false,
+      path: 'https://www.michalhotovec.com/extra/loader/loader.json'
+    };
+
+    var anim;
+
+    anim = bodymovin.loadAnimation(animData);
+    </script>
   </body>
 </html>
