@@ -71,12 +71,12 @@ function init() {
 
 	//Hier worden de kanten van de kubus aangemaakt.
 	kubus = new THREE.Group()
-	kubus.add( new Element( 'cube_'+cube_sides[0], './sides/front.html', 0, 0, 210, 0, 0 ) ) //Front
-	kubus.add( new Element( 'cube_'+cube_sides[1], './sides/right.html', 210, 0, 0, 0, Math.PI / 2 ) ) 		//Right
-	kubus.add( new Element( 'cube_'+cube_sides[2], './sides/back.html', 0, 0, - 210, 0, Math.PI ) ) 			//Back
-	kubus.add( new Element( 'cube_'+cube_sides[3], './sides/left.html', - 210, 0, 0, 0, -Math.PI / 2 ) ) //Left
-	kubus.add( new Element( 'cube_'+cube_sides[4], './sides/top.html', 0, 210, 0, Math.PI/2, Math.PI ) ) //Top
-	kubus.add( new Element( 'cube_'+cube_sides[5], './sides/bottom.html', 0, -210, 0, Math.PI / 2, 0) ) //Bottom
+	kubus.add( new Element( 'cube_'+cube_sides[0], './sides/front/index.html', 0, 0, 210, 0, 0 ) ) //Front
+	kubus.add( new Element( 'cube_'+cube_sides[1], './sides/right/index.html', 210, 0, 0, 0, Math.PI / 2 ) ) 		//Right
+	kubus.add( new Element( 'cube_'+cube_sides[2], './sides/back/index.html', 0, 0, - 210, 0, Math.PI ) ) 			//Back
+	kubus.add( new Element( 'cube_'+cube_sides[3], './sides/left/index.html', - 210, 0, 0, 0, -Math.PI / 2 ) ) //Left
+	kubus.add( new Element( 'cube_'+cube_sides[4], './sides/top/index.html', 0, 210, 0, Math.PI/2, Math.PI ) ) //Top
+	kubus.add( new Element( 'cube_'+cube_sides[5], './sides/bottom/index.html', 0, -210, 0, Math.PI / 2, 0) ) //Bottom
 	scene.add( kubus )
 
 	//De controller zodat je de kubus kan draaien.
