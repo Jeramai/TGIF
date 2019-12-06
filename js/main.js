@@ -28,10 +28,38 @@ var Element = function ( id, content, x, y, z, rx, ry) {
 	div.style.backgroundColor = 'white'
 	div.src = content
 	div.addEventListener( 'mouseover', function (){
+    // camera.position.set( 0, 0, 1500 )
+    switch(id){
+      case 'cube_front':
+        kubus.rotation.y = 0
+        kubus.rotation.x = 0
+        kubus.rotation.z = 0
+        break
+      case 'cube_left':
+        kubus.rotation.y = (Math.PI / 2)
+        kubus.rotation.x = 0
+        kubus.rotation.z = 0
+        break
+      case 'cube_back':
+        kubus.rotation.y = Math.PI
+        kubus.rotation.x = 0
+        kubus.rotation.z = 0
+        break
+      case 'cube_right':
+        kubus.rotation.y = (Math.PI / 2) * 3
+        kubus.rotation.x = 0
+        kubus.rotation.z = 0
+        break
+      case 'cube_top':
+      case 'cube_bottom':
+        break
+    }
+
 		if(!mouseDown){
 			animateFlow = false
 		}
-	}, true )
+
+	}, false )
 
 	div.addEventListener( 'mouseout', function (){
 		if(!mouseDown){

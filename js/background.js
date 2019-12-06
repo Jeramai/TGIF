@@ -66,6 +66,8 @@ function onWindowResize() {
 	canvas.height = window.innerHeight
 	bgcanvas.width = window.innerWidth
 	bgcanvas.height = window.innerHeight
+
+  drawBackground()
 }
 
 //Maak de achtergrond
